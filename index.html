@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Animation d'intro -->
+    <div id="intro-animation" style="position:fixed;z-index:2000;top:0;left:0;width:100vw;height:100vh;background:#2c3e50;display:flex;align-items:center;justify-content:center;flex-direction:column;color:white;font-family:'Poppins',sans-serif;font-size:2.5em;letter-spacing:2px;transition:opacity 1s;">
+      <span id="intro-title">Kadir CETINTAS</span>
+      <span style="font-size:0.5em;margin-top:20px;">Développeur Web & Futur Full Stack</span>
+    </div>
+    <!-- Bouton mode sombre -->
+    <button id="dark-mode-toggle" aria-label="Basculer le mode sombre" style="position:fixed;top:20px;right:20px;z-index:1500;background:#fff;border:none;border-radius:50%;width:48px;height:48px;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.5em;transition:background 0.3s;">
+      <i class="fas fa-moon"></i>
+    </button>
+    <!-- Bouton scroll to top -->
+    <button id="scrollToTop" aria-label="Retour en haut" style="display:none;position:fixed;bottom:30px;right:30px;z-index:1500;background:#007bff;color:#fff;border:none;border-radius:50%;width:48px;height:48px;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;font-size:1.5em;align-items:center;justify-content:center;transition:background 0.3s,opacity 0.3s;"><i class="fas fa-arrow-up"></i></button>
+    <!-- Fond animé -->
+    <div id="animated-bg"></div>
     <header>
         <div class="container">
             <h1>Kadir CETINTAS</h1>
@@ -41,10 +54,17 @@
                 <div class="about-content">
                     <div class="about-text">
                         <h3>Qui suis-je ?</h3>
-                        <p>Je suis Kadir CETINTAS, un passionné de développement web en formation. Actuellement en 2ème année de BTS SIO (Services Informatiques aux Organisations) avec une spécialisation en SLAM (Solutions Logicielles et Applications Métiers) au lycée Marc Bloch de Sérignan.</p>
+                        <p>Je suis Kadir CETINTAS, un passionné de développement web. Diplômé d'un BTS SIO (Services Informatiques aux Organisations, option SLAM) et admis à l'EPSI Montpellier en alternance pour une licence professionnelle (Bachelor 3) en Développement Web Full Stack.</p>
                         
                         <h3>Mon Parcours</h3>
                         <div class="education-timeline">
+                            <div class="education-item">
+                                <span class="year">2025-2026</span>
+                                <div class="education-details">
+                                    <h4>Bachelor 3 EPSI Montpellier - Développement Web Full Stack</h4>
+                                    <p>EPSI Montpellier (en alternance)</p>
+                                </div>
+                            </div>
                             <div class="education-item">
                                 <span class="year">2023-2025</span>
                                 <div class="education-details">
@@ -93,8 +113,8 @@
         <section id="alternance" class="alternance-search reveal">
             <div class="container">
                 <h2>Recherche d'Alternance : Développeur Full Stack – Octobre 2025</h2>
-                <p>Je termine actuellement ma deuxième année de BTS SIO (option SLAM) au lycée Marc Bloch à Sérignan.</p>
-                <p>À la rentrée d'octobre 2025, je poursuis mon parcours à l'EPSI Montpellier en alternance, dans le cadre de la formation Concepteur Développeur d'Applications ou web (titre RNCP niveau 6).</p>
+                <p>J'ai obtenu mon BTS SIO (option SLAM) au lycée Marc Bloch à Sérignan.</p>
+                <p>À la rentrée d'octobre 2025, j'intègre l'EPSI Montpellier en alternance (Bachelor 3 - Développement Web Full Stack).</p>
                 <p>Je suis donc à la recherche d'une alternance d'un an en développement web full stack, à compter d'octobre 2025.</p>
                 <h3>Ce que je peux apporter à votre équipe :</h3>
                 <ul>
@@ -156,8 +176,12 @@
             <div class="container">
                 <h2>Mes Formations</h2>
                 <div class="formation-item">
+                    <h3>Bachelor 3 EPSI Montpellier (Développement Web Full Stack)</h3>
+                    <p class="period">2025-2026 - EPSI Montpellier (en alternance)</p>
+                </div>
+                <div class="formation-item">
                     <h3>BTS SIO (Développement)</h3>
-                    <p class="period">2023-2025 - Lycée Marc Bloch, Sérignan</p>
+                    <p class="period">2023-2025 - Lycée Marc Bloch, Sérignan <strong>(Diplôme obtenu)</strong></p>
                 </div>
                 <div class="formation-item">
                     <h3>BAC STMG Gestion Finance</h3>
@@ -254,6 +278,14 @@
                 </div>
             </div>
         </section>
+
+        <!-- Fun Facts -->
+        <section id="fun-facts" class="reveal">
+          <div class="container">
+            <h2>Fun Facts</h2>
+            <ul id="fun-facts-list" style="font-size:1.2em;text-align:center;"></ul>
+          </div>
+        </section>
     </main>
 
     <footer>
@@ -263,5 +295,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.1.0/tsparticles.bundle.min.js"></script>
 </body>
 </html> 

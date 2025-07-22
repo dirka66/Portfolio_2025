@@ -1097,3 +1097,151 @@ footer {
 .main-nav:not(.active) {
     animation: slideOut 0.3s ease-out forwards;
 }
+
+/* Animation d'intro */
+#intro-animation {
+  animation: fadeInIntro 1.2s cubic-bezier(.77,0,.18,1) both;
+}
+@keyframes fadeInIntro {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+#intro-animation.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s;
+}
+/* Mode sombre */
+body.dark-mode {
+  background: #181c24;
+  color: #f1f1f1;
+}
+body.dark-mode header, body.dark-mode footer {
+  background: #181c24;
+  color: #f1f1f1;
+}
+body.dark-mode section, body.dark-mode .about-text, body.dark-mode .contact-info, body.dark-mode .contact-form-container, body.dark-mode .certifications-list .certification-item {
+  background: #232a36;
+  color: #f1f1f1;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+body.dark-mode .main-nav, body.dark-mode .main-nav ul li a {
+  background: #232a36;
+  color: #f1f1f1;
+}
+body.dark-mode .main-nav ul li a:hover {
+  color: #00bfff;
+}
+body.dark-mode #dark-mode-toggle {
+  background: #232a36;
+  color: #f1f1f1;
+}
+#dark-mode-toggle {
+  transition: background 0.3s, color 0.3s;
+}
+#dark-mode-toggle.active {
+  background: #232a36;
+  color: #f1f1f1;
+}
+/* Scroll to top */
+#scrollToTop {
+  opacity: 0.7;
+  transition: opacity 0.3s, background 0.3s;
+}
+#scrollToTop:hover {
+  opacity: 1;
+  background: #0056b3;
+}
+/* Fond animé */
+#animated-bg {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+/* Fun Facts */
+#fun-facts {
+  background: linear-gradient(120deg, #f8f9fa 60%, #e3f0ff 100%);
+  margin-bottom: 40px;
+}
+body.dark-mode #fun-facts {
+  background: linear-gradient(120deg, #232a36 60%, #1a2230 100%);
+}
+#fun-facts-list li {
+  margin: 18px 0;
+  font-size: 1.2em;
+  list-style: none;
+  opacity: 0.9;
+  transition: color 0.3s;
+}
+#fun-facts-list li:before {
+  content: '✨';
+  margin-right: 10px;
+}
+/* Effet 3D sur les cartes de projets */
+.project-item {
+  perspective: 800px;
+  transition: transform 0.3s cubic-bezier(.77,0,.18,1), box-shadow 0.3s;
+  will-change: transform;
+}
+.project-item:hover {
+  transform: rotateY(8deg) scale(1.04) translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,123,255,0.15);
+  z-index: 2;
+}
+body.dark-mode, body.dark-mode section, body.dark-mode .about-text, body.dark-mode .contact-info, body.dark-mode .contact-form-container, body.dark-mode .certifications-list .certification-item, body.dark-mode .project-item, body.dark-mode .skills-list li, body.dark-mode .formation-item, body.dark-mode .year, body.dark-mode .education-details, body.dark-mode .skills-certs ul li, body.dark-mode .contact-item p, body.dark-mode .contact-item a, body.dark-mode .main-nav ul li a, body.dark-mode .main-nav ul li a:visited, body.dark-mode .main-nav ul li a:active, body.dark-mode .main-nav ul li a:focus, body.dark-mode .main-nav ul li a:hover, body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+  color: #f1f1f1 !important;
+}
+body.dark-mode .main-nav ul li a:hover {
+  color: #00bfff !important;
+}
+body.dark-mode .skills-list i, body.dark-mode .linkedin-link, body.dark-mode .linkedin-link span, body.dark-mode .linkedin-link i {
+  color: #f1f1f1 !important;
+}
+body.dark-mode .linkedin-link {
+  background: #005582 !important;
+}
+body.dark-mode .linkedin-link:hover {
+  background: #0077B5 !important;
+}
+body.dark-mode .certifications-list .certification-item h4 {
+  color: #f1f1f1 !important;
+  border-bottom: 3px solid #00bfff !important;
+}
+body.dark-mode .certifications-list .certification-item ul li::before {
+  color: #00bfff !important;
+}
+body.dark-mode .contact-form input, body.dark-mode .contact-form textarea {
+  background: #232a36;
+  color: #f1f1f1;
+  border: 1px solid #444;
+}
+body.dark-mode .contact-form input::placeholder, body.dark-mode .contact-form textarea::placeholder {
+  color: #aaa;
+}
+
+/* Texte de présentation principale en blanc en mode sombre */
+body.dark-mode .about-text p:first-of-type {
+  color: #fff !important;
+}
+/* Certification OpenClassrooms en blanc en mode sombre */
+body.dark-mode .certifications-list .certification-item:first-of-type p {
+  color: #fff !important;
+}
+/* Certification SecNumacadémie en noir en mode sombre */
+body.dark-mode .certifications-list .certification-item:nth-of-type(2),
+body.dark-mode .certifications-list .certification-item:nth-of-type(2) *,
+body.dark-mode .certifications-list .certification-item:nth-of-type(2) ul li {
+  color: #111 !important;
+}
+/* Cases points forts, compétences techniques et autres compétences en noir en mode sombre */
+body.dark-mode .skills-list li,
+body.dark-mode .skills-certs ul li {
+  color: #111 !important;
+  background: #fff !important;
+}
+/* Bouton 'Envoyez-moi un message' en gris en mode sombre */
+body.dark-mode .contact-form button[type="submit"] {
+  background: #888 !important;
+  color: #fff !important;
+}
