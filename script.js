@@ -50,16 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 }); 
 
-// Animation d'intro
-window.addEventListener('DOMContentLoaded', () => {
-  const intro = document.getElementById('intro-animation');
-  if (intro) {
-    setTimeout(() => {
-      intro.classList.add('hide');
-      setTimeout(() => { intro.style.display = 'none'; }, 1200);
-    }, 2200);
-  }
-});
 // Mode sombre
 const darkToggle = document.getElementById('dark-mode-toggle');
 if (darkToggle) {
