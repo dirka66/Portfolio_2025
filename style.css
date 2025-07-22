@@ -72,6 +72,10 @@ header h1 {
     text-shadow: 1px 1px 3px var(--shadow-lg);
 }
 
+header h1 img, header h1 .header-img, header h1 .icon, header h1 svg {
+  display: none !important;
+}
+
 /* Menu hamburger */
 .menu-toggle {
     display: block;
@@ -1133,38 +1137,42 @@ body.dark-mode .main-nav ul li a:hover {
   color: #00bfff;
 }
 body.dark-mode #dark-mode-toggle {
+  align-items: center;
+  font-size: 1.3em;
+#dark-mode-toggle.active {
   background: #232a36;
   color: #f1f1f1;
-}
-#dark-mode-toggle {
-  background: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3em;
-  margin-left: 12px;
-  transition: background 0.3s, color 0.3s;
-  position: static;
-}
-header .menu-toggle, #dark-mode-toggle {
-  display: inline-flex;
-  vertical-align: middle;
-}
-@media (max-width: 768px) {
-  #dark-mode-toggle {
-    width: 40px;
-    height: 40px;
-    font-size: 1.1em;
-    margin-left: 8px;
-  }
-  header .container {
     gap: 0;
+  }
+  header h1 {
+    flex: 1 1 auto;
+    margin-right: 10px;
+  }
+  .menu-toggle {
+    margin-left: auto;
+    margin-right: 0;
+  }
+  #dark-mode-toggle {
+    margin-left: 8px;
+    margin-right: 0;
+    order: 2;
+    z-index: 1002;
+  }
+  header .menu-toggle, #dark-mode-toggle {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+}
+@media (max-width: 576px) {
+  header .container {
+    padding: 0 10px;
+  }
+  #dark-mode-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 1em;
+    margin-left: 6px;
   }
 }
 /* Scroll to top */
